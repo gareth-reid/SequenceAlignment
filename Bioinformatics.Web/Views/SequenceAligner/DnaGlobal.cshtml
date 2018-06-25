@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@using Antlr.Runtime
+@using MvcMega.Forms.MVC.Html
+@model Bioinformatics.Web.Models.SequenceAlignerModel
+
+@using (Html.BeginForm("Execute", "SequenceAligner", FormMethod.Post, new {@id="dna-global"}))
+{
+    <div class="row-fluid funky-text">
+        <div class="span12">
+            <div class="span6">
+                @Html.ControlBundleFor(m => m.Sequence1, @Html.TextAreaFor(m => m.Sequence1), labelClass: "strong")
+            </div>
+            <div class="span6">
+                @Html.ControlBundleFor(m => m.Sequence2, @Html.TextAreaFor(m => m.Sequence2), labelClass: "strong")
+            </div>
+        </div>
+        <div class="span12 italics">Some sample sequences have been added. (Chain K, Structural Basis Of Cytosolic Dna -immune receptors - synthetic) </div>
+    </div>
+    <div class="row-fluid">
+        &nbsp;
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
+              <div class="alert alert-success">
+                <fieldset>
+                    <legend class="funky-header">Aligned Sequence</legend>
+                    <div class="span12 funky-text">
+                        @Html.DisplayFor(m => m.Sequence1Aligned)
+                    </div>
+                    <div class="span12 funky-text">
+                        @Html.DisplayFor(m => m.Sequence2Aligned)
+                    </div>
+                </fieldset>
+            </div>  
+        </div>
+    </div>
+    <input type="button" value="Compare" id="compare" class="btn btn-primary"/>
+}
+<script>
+    $(document).ready(function () {
+        $('#compare').click(function() {
+            $.ajax({
+                url: "@Url.Action("Execute", "SequenceAligner")",
+                type: "POST",
+                data: { Sequence1: $('#Sequence1').val(), Sequence2: $('#Sequence2').val() },
+                success: function(result){
+                    $("#dna-global").html(result);
+                }
+            });
+        });
+    });
+</script>

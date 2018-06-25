@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="span6 funky-text">
+    <p>
+        Broadly, bioinformatics is the field of modelling and predicting biological systems and individual components. This encompasses both molecular modelling and homologous sequence analysis, both of which can be used to identify biological entities such as proteins and nucleotides from sequence to translation and then to final structure. In another way, take some DNA and say what protein will form. Sometimes the DNA (genes) will have mistakes in their codes, this is what I (and all molecular scientists) hope to identify and fix. 
+    </p>
+    <p class="funky-header2">Molecular or "Raw" method (more accurate but complicated)</p>
+    <p>
+        A protein sequence is a chain of amino acids waiting to become a protein. All that is needed is for these amino acids (molecules) to behave like any other matter -colide, join etc. and they will become a protein. <b>By analysing a molecular system using physics, specifically the laws of motion and energy, one can model the movements of atoms within a 3d space, hence predicting the structure (and function) of some DNA encoded goodies. All from a row of letters derived from DNA.</b> By treating all atoms (the amino acids in the sequence) as individual 'balls' the motions can be calculated based on their interactions with other atoms. These interactions are derived using four main atomic interactions which can be expressed as a 'spring model'. So we can simulate each state from beginning to the end of the interaction. All interactions are assigned a spring constant (k) which is the energy required to push them past equilibrium. By adjusting energy levels we can try to simulate the eventual folding states of proteins. This method is computationally expensive and only small sections of the overall folding can currently be modelled. 
+        <a href="http://www.worthalook.net/Home/LoadPage?pageId=8">Check out what I did!</a>
+    </p>
+    <p class="funky-header2">Standard sequence analysis</p>
+    <p>
+        <b>Another method is searching homologous sequences in a database and finding appropriate matches, or alignments, using a dynamic programming algorithm. <a href="@Url.Action("Tools", "Home")">Here it is!</a></b>  It does this by taking a sequence, either nucleotide or protein, and comparing it to other already known sequences in a database. For this to work the sequences aligning must be homologous (descending from the same ancestor). It does this by matching each amino acid in each sequence using a scoring system which allows for the fact that some amino acids are more like others and some are completely different. The systems use this score to return one or more possible matches or like sequences. It also assigns an E value which signifies how likely this match was by chance. This same process can also be applied to the nucleic acids that make up a nucleotide. From here we can then search for known structures based on the similar (or same) proteins. As we can see this eventually achieves the same result as molecular modelling but relies on existing data and software rather than the laws of physics.
+    </p>
+    <p class="funky-header2">How will this help?</p>
+    <p>
+        <b>Using these methods we can study genomic, DNA, RNA, proteins, simulate folding and structure formation or simulate drug docking and cell permeation,</b> which, previously could only be done experimentally which is costly and takes time. By doing majority of the leg work computationally we can greatly reduce the amount of lab work needed as well as predict events before they happen. We can find historical or evolutionary relationships from just a sequence by using alignment analysis. We also use bioinformatics in drug creation, which is critical to:
+        <ul>
+            <li>Simulate reactions with the target proteins</li>
+            <li>Model whether a ligand will permeate a cell membrane</li>
+            <li>Simulate reactions with other areas to avoid unwanted reactions and side effects</li>
+        </ul>
+    </p>
+    <p>Insert other cool stuff here</p>
+</div>

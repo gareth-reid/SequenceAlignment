@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bioinformatics and molecular modelling">
+      <meta name="author" content="Gareth Reid">
+      <meta name="keywords" content="bioinformatics, molecular, modelling, sequence, alignment, nucleotide, protein, folding, DNA, mRNA, RNA, drugs, medicine, gene">
+    <link href="~/Content/bootstrap-responsive.min.css" rel="stylesheet">
+      <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+      <link href="~/Content/bootstrap-theme.css" rel="stylesheet">
+        <link href="~/Content/Site.css" rel="stylesheet">
+        <script src="~/Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <title>Bioinformatics</title>
+  </head>
+
+    <body>
+       <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=12249245698";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <img src="~/Content/Helix.jpg" class="stretch"/>
+        <div class="container content-body">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li class="active"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li><a href="@Url.Action("About", "Home")">About Me</a></li>
+                    <li><a href="@Url.Action("Contact", "Home")">Contact Me</a></li>
+                    <li><a href="http://www.worthalook.net" target="_blank">Website</a></li>
+                    <li><a href="http://bioinformatics-blog.azurewebsites.net/" target="_blank">Blog</a></li>
+                    <li><a href="@Url.Action("Links", "Home")">Links</a></li>
+                </ul>
+                <h3 class="funky-header">Bio<span style="color:red">I</span>nformatics</h3>
+            </div>
+
+            <div class="jumbotron">
+                <div class="container">
+                <p class="funky-header hidden-xs hidden-sm"><img src='~/Content/Title.jpg'/></p> 
+                    
+                    
+                    <p class="funky-text italics">"the science of collecting and analysing complex biological data such as genetic codes."</p>
+                    <p>
+                        <a class="btn btn-lg btn-warning" href="@Url.Action("Tools", "Home")" role="button">Tools</a>
+                        <a class="btn btn-lg btn-success" href="@Url.Action("Links", "Home")" role="button">Papers/Links</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row marketing">
+                @RenderBody()
+            </div>
+
+            <div class="footer">
+                <p>Gareth Reid</p>
+                <p><div class="fb-like" data-href="http://bioinformatics.azurewebsites.net" data-width="50" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div></p>
+            </div>
+
+        </div> 
+        @RenderSection("featured", required: false)
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

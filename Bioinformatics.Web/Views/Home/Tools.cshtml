@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Tools";
+}
+<div class="span6 well funky-text">
+    The DNA sequence aligner I built in C# and F# uses a process called dynamic programming to align two (or more) sequences as closly as possible. This is useful when searching a database for a sequence and lots of other cool stuff.
+</div>
+<div class="span7">
+<fieldset>
+    <legend>DNA sequence alignment</legend>
+    <div class="span2"></div>
+    <div class="span2">
+        <a class="btn btn-lg btn-primary" href="@Url.Action("DnaGlobal", "SequenceAligner")" role="button">Global</a>
+    </div>
+    <div class="span2"></div>
+    <div class="span2">
+        <a class="btn btn-lg btn-warning" href="@Url.Action("DnaLocal", "SequenceAligner")" role="button">Local</a>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Protein sequence</legend>
+    <div class="span2"></div>
+    <div class="span2">
+        <a class="btn btn-lg btn-primary" href="@Url.Action("ProteinGlobal", "SequenceAligner")" role="button">Global</a>
+    </div>
+    <div class="span2"></div>
+    <div class="span2">
+        <a class="btn btn-lg btn-warning" href="@Url.Action("ProteinLocal", "SequenceAligner")" role="button">Local</a>
+    </div>
+</fieldset>
+    </div>
